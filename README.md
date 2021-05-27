@@ -1,2 +1,2 @@
 # exploring-the-persome
-This repository includes the code from Revelle, Dworak, &amp; Condon (2021)
+This repository includes the code provided in the appendix of Revelle, Dworak, &amp; Condon (2021)
