@@ -4,8 +4,6 @@
 
 # Session Data files
 .RData
-.rda
-.Rproj
 
 # User-specific files
 .Ruserdata
@@ -39,3 +37,7 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# Ignore all large files
+**.rda
+**.Rproj
