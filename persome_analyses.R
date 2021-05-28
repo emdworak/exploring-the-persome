@@ -162,9 +162,9 @@ pred.27 <- predict.psych(demos.27,data=demos.spi[-ss,] )
 cross.valid.b5 <- diag(cor2(pred.b5,demos.spi[-ss,1:19]))
 cross.valid.l27 <- diag(cor2(pred.27,demos.spi[-ss,1:19]))
 
-#sapa <- read.file() #goes to my directory to find the file
-#load(sapa) #one extra step required
-#sapa <- char2numeric(sapa) #makes the fields numeric
+# sapa <- read.file() #goes to my directory to find the file
+# load(sapa) #one extra step required
+# sapa <- char2numeric(sapa) #makes the fields numeric
 criteria <- colnames(sapa)[c(2:10,14:23)] #choose 19 criteria
 spi.items <- selectFromKeys(spi.keys)
 options("mc.cores"=8) #I am using a mac with multiple cores
