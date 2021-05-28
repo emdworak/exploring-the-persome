@@ -21,7 +21,8 @@ Elizabeth Dworak
 # Overview
 
 This repository includes the code provided in the appendix of [Revelle,
-Dworak, & Condon (2021)](https://doi.org/10.1016/j.paid.2020.109905)
+Dworak, & Condon (2021)](https://doi.org/10.1016/j.paid.2020.109905) As
+of “27 May, 2021”, this repository is a draft.
 
 # A1. Reliability analyses for the SPI data set
 
@@ -148,24 +149,23 @@ df2latex(bs.spi.smoke[c(2,3,5)])
 bs.spi.smoke[c(2,3,5)]
 ```
 
-    ##            mean.r        sd.r                                             item
-    ## q_1461 -0.2335985 0.010657394              Never spend more than I can afford.
-    ## q_1867 -0.1911178 0.005548016                         Try to follow the rules.
-    ## q_1609  0.1893234 0.006270429                         Rebel against authority.
-    ## q_1624 -0.1603660 0.007888408                               Respect authority.
-    ## q_1173  0.1580548 0.011589567               Jump into things without thinking.
-    ## q_369  -0.1524429 0.009968855   Believe that laws should be strictly enforced.
-    ## q_56   -0.1476917 0.012134427                  Am able to control my cravings.
-    ## q_1424  0.1468737 0.012891504                             Make rash decisions.
-    ## q_35    0.1408254 0.011135993                            Act without thinking.
-    ## q_598   0.1385338 0.012358819                                 Do crazy things.
-    ## q_736  -0.1353621 0.012507010                       Easily resist temptations.
-    ## q_1590 -0.1308628 0.011896365                              Rarely overindulge.
-    ## q_1664  0.1299128 0.005889552                                     Seek danger.
-    ## q_1462 -0.1275239 0.010949717                                   Never splurge.
-    ## q_1452  0.1234661 0.009862434                               Neglect my duties.
-    ## q_4289 -0.1180790 0.007859147           Trust people to mainly tell the truth.
-    ## q_4223 -0.1133352 0.008682558 Stop to think things over before doing anything.
+    ##            mean.r        sd.r                                           item
+    ## q_1461 -0.2336089 0.006139731            Never spend more than I can afford.
+    ## q_1867 -0.1911875 0.008276591                       Try to follow the rules.
+    ## q_1609  0.1893200 0.007406146                       Rebel against authority.
+    ## q_1624 -0.1603994 0.005914615                             Respect authority.
+    ## q_1173  0.1580980 0.008816014             Jump into things without thinking.
+    ## q_369  -0.1524306 0.008065642 Believe that laws should be strictly enforced.
+    ## q_56   -0.1477063 0.007479628                Am able to control my cravings.
+    ## q_1424  0.1469488 0.006336474                           Make rash decisions.
+    ## q_35    0.1408678 0.007412669                          Act without thinking.
+    ## q_598   0.1385917 0.010638395                               Do crazy things.
+    ## q_736  -0.1353779 0.008416225                     Easily resist temptations.
+    ## q_1590 -0.1308879 0.007870450                            Rarely overindulge.
+    ## q_1664  0.1299515 0.007320429                                   Seek danger.
+    ## q_1462 -0.1275774 0.008762748                                 Never splurge.
+    ## q_1452  0.1235197 0.006218031                             Neglect my duties.
+    ## q_4289 -0.1181108 0.011119984         Trust people to mainly tell the truth.
 
 # A3. Graphical displays: The Manhattan plot
 

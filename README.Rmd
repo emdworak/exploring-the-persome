@@ -16,7 +16,7 @@ knitr::opts_chunk$set(warning=FALSE, message=FALSE)
 ```
 
 # Overview
-This repository includes the code provided in the appendix of [Revelle, Dworak, &amp; Condon (2021)](https://doi.org/10.1016/j.paid.2020.109905)
+This repository includes the code provided in the appendix of [Revelle, Dworak, &amp; Condon (2021)](https://doi.org/10.1016/j.paid.2020.109905) As of "`r format(Sys.time(), '%d %B, %Y')`", this repository is a draft.
 
 # A1. Reliability analyses for the SPI data set
 ```{r}
