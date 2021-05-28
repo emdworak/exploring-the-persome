@@ -40,4 +40,6 @@ vignettes/*.pdf
 
 # Ignore all large files
 **.rda
+**.rdata
 **.Rproj
+**.csv
