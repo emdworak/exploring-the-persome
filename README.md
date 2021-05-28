@@ -282,7 +282,7 @@ derivation samples. Standard deviations are the standard deviation
 across the 10 fold replications.
 
 ``` r
-# For some reason this table isn't matching up. Need to talk to Bill about this.
+# PURPLERABBIT: For some reason this table isn't matching up. Need to talk to Bill about this.
 bs.spi.smoke[c(2,3,5)] %>% 
   mutate(mean.r = round(mean.r, 2),
          sd.r = round(sd.r, 2)) %>% 
@@ -292,24 +292,25 @@ bs.spi.smoke[c(2,3,5)] %>%
   knitr::kable(caption = "Items predicting smoking form a scale with a cross validated prediction of .24")
 ```
 
-|         | mean r | sd r | Item Content                                   |
-|:--------|-------:|-----:|:-----------------------------------------------|
-| q\_1461 |  -0.23 | 0.01 | Never spend more than I can afford.            |
-| q\_1867 |  -0.19 | 0.01 | Try to follow the rules.                       |
-| q\_1609 |   0.19 | 0.01 | Rebel against authority.                       |
-| q\_1624 |  -0.16 | 0.01 | Respect authority.                             |
-| q\_1173 |   0.16 | 0.01 | Jump into things without thinking.             |
-| q\_369  |  -0.15 | 0.01 | Believe that laws should be strictly enforced. |
-| q\_56   |  -0.15 | 0.01 | Am able to control my cravings.                |
-| q\_1424 |   0.15 | 0.01 | Make rash decisions.                           |
-| q\_35   |   0.14 | 0.01 | Act without thinking.                          |
-| q\_598  |   0.14 | 0.01 | Do crazy things.                               |
-| q\_736  |  -0.14 | 0.01 | Easily resist temptations.                     |
-| q\_1590 |  -0.13 | 0.01 | Rarely overindulge.                            |
-| q\_1664 |   0.13 | 0.01 | Seek danger.                                   |
-| q\_1462 |  -0.13 | 0.01 | Never splurge.                                 |
-| q\_1452 |   0.12 | 0.01 | Neglect my duties.                             |
-| q\_4289 |  -0.12 | 0.01 | Trust people to mainly tell the truth.         |
+|         | mean r | sd r | Item Content                                     |
+|:--------|-------:|-----:|:-------------------------------------------------|
+| q\_1461 |  -0.23 | 0.01 | Never spend more than I can afford.              |
+| q\_1867 |  -0.19 | 0.01 | Try to follow the rules.                         |
+| q\_1609 |   0.19 | 0.01 | Rebel against authority.                         |
+| q\_1624 |  -0.16 | 0.01 | Respect authority.                               |
+| q\_1173 |   0.16 | 0.01 | Jump into things without thinking.               |
+| q\_369  |  -0.15 | 0.01 | Believe that laws should be strictly enforced.   |
+| q\_56   |  -0.15 | 0.01 | Am able to control my cravings.                  |
+| q\_1424 |   0.15 | 0.01 | Make rash decisions.                             |
+| q\_35   |   0.14 | 0.01 | Act without thinking.                            |
+| q\_598  |   0.14 | 0.01 | Do crazy things.                                 |
+| q\_736  |  -0.14 | 0.01 | Easily resist temptations.                       |
+| q\_1590 |  -0.13 | 0.01 | Rarely overindulge.                              |
+| q\_1664 |   0.13 | 0.01 | Seek danger.                                     |
+| q\_1462 |  -0.13 | 0.01 | Never splurge.                                   |
+| q\_1452 |   0.12 | 0.01 | Neglect my duties.                               |
+| q\_4289 |  -0.12 | 0.01 | Trust people to mainly tell the truth.           |
+| q\_4223 |  -0.11 | 0.01 | Stop to think things over before doing anything. |
 
 Items predicting smoking form a scale with a cross validated prediction
 of .24
@@ -320,7 +321,7 @@ appear in the manuscript, but it’s part of Table 3.
 ``` r
 bs.spi.health <- bs$items$health
 
-# For some reason this table isn't matching up. Need to talk to Bill about this.
+# PURPLERABBIT: For some reason this table isn't matching up. Need to talk to Bill about this.
 # Also, highest value isn't .44
 bs.spi.health[c(2,3,5)] %>% 
   mutate(mean.r = round(mean.r, 2),
@@ -343,7 +344,7 @@ bs.spi.health[c(2,3,5)] %>%
 | q\_4249 |  -0.26 | 0.01 | Would call myself a nervous person.            |
 | q\_1024 |  -0.26 | 0.01 | Hang around doing nothing.                     |
 | q\_4252 |  -0.25 | 0.01 | Am a worrier.                                  |
-| q\_808  |  -0.25 | 0.00 | Fear for the worst.                            |
+| q\_808  |  -0.25 | 0.01 | Fear for the worst.                            |
 | q\_1989 |  -0.24 | 0.01 | Worry about things.                            |
 | q\_1452 |  -0.24 | 0.01 | Neglect my duties.                             |
 | q\_1444 |  -0.23 | 0.01 | Need a push to get started.                    |
@@ -351,8 +352,7 @@ bs.spi.health[c(2,3,5)] %>%
 | q\_39   |   0.22 | 0.01 | Adjust easily.                                 |
 | q\_979  |  -0.21 | 0.01 | Get overwhelmed by emotions.                   |
 | q\_736  |   0.21 | 0.01 | Easily resist temptations.                     |
-| q\_312  |  -0.21 | 0.01 | Avoid company.                                 |
-| q\_254  |   0.20 | 0.01 | Am skilled in handling social situations.      |
+| q\_312  |  -0.21 | 0.00 | Avoid company.                                 |
 
 Items predicting self-rated health form a scale with a cross validated
 prediction of .44
@@ -814,8 +814,9 @@ bs.cv <- crossValidation(bs.sapa,sapa[-ss,])
 
 #combine the best scales
 cross.valid.df <- data.frame(cv5=cv.5$crossV, cv.27=cv.27$crossV,
-                             cv135=cv.135$crossV,cvbs= bs.cv$crossV)
-cross.valid.df.sorted <- dfOrder(cross.valid.df,1)
+                             cv135=cv.135$crossV, cvbs= bs.cv$crossV)
+
+cross.valid.df.sorted <- dfOrder(cross.valid.df, 1)
 ```
 
 ### Plot the results
@@ -824,12 +825,15 @@ This output corresponds with the results of Figure 4 from [Revelle,
 Dworak, & Condon (2021)](https://doi.org/10.1016/j.paid.2020.109905).
 
 ``` r
-# For some reason this table isn't matching up. Need to talk to Bill about this.
-# Missing bestS
+# PURPLERABBIT: For some reason this table isn't matching up. Need to talk to Bill about this.
+# It appears that the order of the x axis is wrong
+# When done with the dataverse data, it's missing bestS
 par(pty="s")
+
 matPlot(cross.valid.df.sorted[c(2,4,6,8)],
         main="Cross validation of multiple regression on sapa data",
         xlas=3, ylab="Cross Validated R",pch=15:18)
+
 legend(1,.5,cs(bestS,27,135,b5),lty=c(4,2,3,1),col=c(4,2,3,1),pch=c(18,16,17,15))
 ```
 
@@ -852,7 +856,7 @@ R.pheno <- cor(sapa[ss,criteria],use="pairwise")
 R.profile <- cor(R.big)
 sapa.pheno.profile <- lowerUpper(R.pheno,R.profile)
 
-par(pty="s")
+par(pty="m")
 corPlot(sapa.pheno.profile,xlas=3,main="Phenotypic (lower) and Profile (upper) correlations")
 ```
 
@@ -875,11 +879,13 @@ correlation and is &lt; .003.
 #we need to change sex to gender to the next step with the spi
 colnames(spi)[2] <- "gender"
 colnames(sc.demos)[2] <-"gender"
-small.crit <- criteria[criteria %in% colnames(spi)[1:10]]
+
+# The code is breaking here and only pulling age
+small.crit <- criteria[criteria %in% colnames(spi)[1:10]] 
 R.spi.sapa <- cor(sapa[spi.items],sapa[small.crit],use="pairwise") #these are the profiles
 
-small.5 <- setCor(y=small.crit,x = 20:24,data=big.scores,plot=FALSE)
-small.27 <- setCor(y=small.crit,x = 25:51,data=big.scores,plot=FALSE)
+small.5 <- setCor(y=small.crit,x = 20:24, data=big.scores, plot=FALSE)
+small.27 <- setCor(y=small.crit,x = 25:51, data=big.scores, plot=FALSE)
 small.135 <- setCor(y=small.crit,x=spi.items,data=sapa,plot=FALSE)
 small.prof <- R.spi.sapa
 small.bs <- bestScales(sapa[c(small.crit,spi.items)],criteria=small.crit, folds=10,
@@ -896,13 +902,16 @@ applying to different sample.
 
 ``` r
 #now validate with the spi data
-valid.5 <- crossValidation(small.5,sc.demos)
-valid.27 <- crossValidation(small.27,sc.demos)
-valid.135 <- crossValidation(small.135,spi)
-valid.bs <- crossValidation(small.bs,spi)
-small.prof.valid <- crossValidation(small.prof,spi)
-small.valid.df <- data.frame(cv5=valid.5$crossV, cv.27=valid.27$crossV,
-                             cv135=valid.135$crossV,cvbs= valid.bs$crossV,profile = small.prof.valid$crossV)
+valid.5 <- crossValidation(small.5, sc.demos)
+valid.27 <- crossValidation(small.27, sc.demos)
+valid.135 <- crossValidation(small.135, spi)
+valid.bs <- crossValidation(small.bs, spi)
+small.prof.valid <- crossValidation(small.prof, spi)
+small.valid.df <- data.frame(cv5=valid.5$crossV, 
+                             cv.27=valid.27$crossV,
+                             cv135=valid.135$crossV,
+                             cvbs= valid.bs$crossV,
+                             profile = small.prof.valid$crossV)
 small.valid.df.sorted <- dfOrder(small.valid.df,1)
 ```
 
@@ -913,11 +922,11 @@ Dworak, & Condon (2021)](https://doi.org/10.1016/j.paid.2020.109905).
 
 ``` r
 par(pty="s")
-
+# PURPLERABBIT: Currently this is only pulling age. There's either an error with criteria on line 482 or I messed up the graph by loading tidyverse
 matPlot(small.valid.df.sorted[c(2,4,6,8,10)],
         main="Cross validation of multiple regression from SAPA on spi data",
         xlas=3, ylab="Cross Validated R",pch=15:19)
-legend(1,.5,cs(bestS,profile,27,135,b5),lty=c(4,5,2,3,1),col=c(4,5,2,3,1),
+legend(1,.5,cs(bestS, profile, 27, 135, b5), lty=c(4, 5, 2, 3, 1), col=c(4, 5, 2, 3, 1),
        pch=c(18,19,16,17,15))
 ```
 
