@@ -28,30 +28,24 @@ library(psych) #make this package active
 library(psychTools) #make this one active as well
 
 spi.scales <- scoreItems(spi.keys,spi) #find scores as well as scale statistics
-spi.scores <- data.frame(spi[1:10],spi.scales$scores) #combine demographics and scores
-set.seed(42) #set the random seed to a memorable value
-ss <- sample(1:4000,2000,replace=FALSE) #randomly choose 2000 subjects
-spi5.R <- setCor(y=1:10,x=11:15,data=spi.scores[ss,],plot=FALSE)
-spi27.R <- setCor(y=1:10,x=16:42,data=spi.scores[ss,],plot=FALSE)
-spi135.R <- setCor(y=1:10,x=11:145,data=spi[ss,],plot=FALSE)
-
-spi.scales <- scoreItems(spi.keys,spi) #find scores as well as scale statistics
 sc.demos <- data.frame(spi[1:10],spi.scales$scores) #combine demographics and scores
 #sc.demos <-cbind(spi[1:10],sc$scores) #combine with scores with demographics
+
 set.seed(42) #for reproducible results
 ss <- sample(1:nrow(sc.demos),nrow(sc.demos)/2)
+
 #derivation multiple Rs
 sc.5 <- setCor(y=1:10,x=11:15, data=sc.demos[ss,], plot=FALSE)
 sc.27 <- setCor(y=1:10,x=16:42, data=sc.demos[ss,], plot=FALSE)
 sc.135 <- setCor(y=1:10,x=11:145,data=spi[ss,] ,plot=FALSE)
+
 #now cross validate
 cv.5 <- crossValidation(sc.5,sc.demos[-ss,])
-
-
 cv.27 <- crossValidation(sc.27,sc.demos[-ss,])
 cv.135 <- crossValidation(sc.135,spi[-ss,])
 cross.valid.df <- data.frame(cv5=cv.5$crossV, cv.27=cv.27$crossV, cv135=cv.135$crossV)
 cross.valid.df.sorted <- dfOrder(cross.valid.df,1)
+
 bs <- bestScales(spi[ss,],criteria=colnames(spi)[1:10], folds=10, n.item=20,
                  dictionary=spi.dictionary,cut=.05)
 bs.cv <- crossValidation(bs,spi[-ss,])
@@ -61,6 +55,7 @@ matPlot(cv.df.bs.sorted[c(2,4,6,8)],minlength=8,
         main="Cross validation of multiple regression on spi data",
         xlas=3, ylab="Cross Validated R", pch=15:19)
 legend(1,.6,cs(135,27,bestS,b5),lty=c(3,2,4,1),col=c(3,2,4,1))
+
 bs.spi.smoke <- bs$items$smoke
 df2latex(bs.spi.smoke[c(2,3,5)])
 
