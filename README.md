@@ -70,21 +70,15 @@ basic.stats <- cbind(omega.df,R5)
 ```
 
 ``` r
-basic.stats
+round(basic.stats, 2)
 ```
 
-    ##                   omgega_total     alpha   omega_h        Agree       Consc
-    ## Agreeableness        0.9083804 0.8662241 0.6115069  1.000000000  0.23990876
-    ## Conscientiousness    0.8918448 0.8570310 0.6058642  0.239908760  1.00000000
-    ## Neuroticism          0.9280740 0.9015796 0.7121339 -0.122273013 -0.19246899
-    ## Extraversion         0.9249006 0.8944207 0.6988962  0.225401325  0.07000414
-    ## Openness             0.8778720 0.8361609 0.7198750 -0.002925886  0.01002750
-    ##                        Neuro       Extra         Open
-    ## Agreeableness     -0.1222730  0.22540132 -0.002925886
-    ## Conscientiousness -0.1924690  0.07000414  0.010027497
-    ## Neuroticism        1.0000000 -0.20215875 -0.123653085
-    ## Extraversion      -0.2021588  1.00000000  0.133487781
-    ## Openness          -0.1236531  0.13348778  1.000000000
+    ##                   omgega_total alpha omega_h Agree Consc Neuro Extra  Open
+    ## Agreeableness             0.91  0.87    0.61  1.00  0.24 -0.12  0.23  0.00
+    ## Conscientiousness         0.89  0.86    0.61  0.24  1.00 -0.19  0.07  0.01
+    ## Neuroticism               0.93  0.90    0.71 -0.12 -0.19  1.00 -0.20 -0.12
+    ## Extraversion              0.92  0.89    0.70  0.23  0.07 -0.20  1.00  0.13
+    ## Openness                  0.88  0.84    0.72  0.00  0.01 -0.12  0.13  1.00
 
 # A2. Regression analyses for the SPI data set
 
@@ -149,23 +143,24 @@ df2latex(bs.spi.smoke[c(2,3,5)])
 bs.spi.smoke[c(2,3,5)]
 ```
 
-    ##            mean.r        sd.r                                           item
-    ## q_1461 -0.2336089 0.006139731            Never spend more than I can afford.
-    ## q_1867 -0.1911875 0.008276591                       Try to follow the rules.
-    ## q_1609  0.1893200 0.007406146                       Rebel against authority.
-    ## q_1624 -0.1603994 0.005914615                             Respect authority.
-    ## q_1173  0.1580980 0.008816014             Jump into things without thinking.
-    ## q_369  -0.1524306 0.008065642 Believe that laws should be strictly enforced.
-    ## q_56   -0.1477063 0.007479628                Am able to control my cravings.
-    ## q_1424  0.1469488 0.006336474                           Make rash decisions.
-    ## q_35    0.1408678 0.007412669                          Act without thinking.
-    ## q_598   0.1385917 0.010638395                               Do crazy things.
-    ## q_736  -0.1353779 0.008416225                     Easily resist temptations.
-    ## q_1590 -0.1308879 0.007870450                            Rarely overindulge.
-    ## q_1664  0.1299515 0.007320429                                   Seek danger.
-    ## q_1462 -0.1275774 0.008762748                                 Never splurge.
-    ## q_1452  0.1235197 0.006218031                             Neglect my duties.
-    ## q_4289 -0.1181108 0.011119984         Trust people to mainly tell the truth.
+    ##            mean.r        sd.r                                             item
+    ## q_1461 -0.2336066 0.005404701              Never spend more than I can afford.
+    ## q_1867 -0.1911485 0.008113073                         Try to follow the rules.
+    ## q_1609  0.1892678 0.007423290                         Rebel against authority.
+    ## q_1624 -0.1603506 0.005755068                               Respect authority.
+    ## q_1173  0.1580863 0.007234169               Jump into things without thinking.
+    ## q_369  -0.1524539 0.007175218   Believe that laws should be strictly enforced.
+    ## q_56   -0.1476863 0.009474181                  Am able to control my cravings.
+    ## q_1424  0.1469444 0.006130030                             Make rash decisions.
+    ## q_35    0.1408800 0.007784410                            Act without thinking.
+    ## q_598   0.1385685 0.005982460                                 Do crazy things.
+    ## q_736  -0.1353261 0.009256591                       Easily resist temptations.
+    ## q_1590 -0.1308001 0.008840191                              Rarely overindulge.
+    ## q_1664  0.1299286 0.006550125                                     Seek danger.
+    ## q_1462 -0.1275295 0.007432587                                   Never splurge.
+    ## q_1452  0.1234857 0.008222337                               Neglect my duties.
+    ## q_4289 -0.1180795 0.006738764           Trust people to mainly tell the truth.
+    ## q_4223 -0.1133387 0.010911663 Stop to think things over before doing anything.
 
 # A3. Graphical displays: The Manhattan plot
 
